@@ -36,27 +36,46 @@
 }
 
 /* ========================= */
-/* MOBILE ONLY */
+/* MOBILE ONLY – PREMIUM */
 /* ========================= */
 @media (max-width: 640px) {
 
-  /* LOGO – bolj podolgovat */
-  .logo-image {
-    height: 150px;
-    width: 320px;          /* rahlo več, bolj “horizontal” */
-    object-fit: contain;
+  /* HEADER – več miru */
+  .header {
+    padding: 28px 16px 16px;
   }
 
-  /* NAV – BOLJ SKUPAJ + CENTER */
+  /* LOGO – elegantno podolgovat */
+  .logo-image {
+    height: 140px;
+    width: 340px;          /* premium, horizontal look */
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+
+  /* NAV – tiho, skupaj */
   .header-nav {
     justify-content: center;
-    gap: 14px;             /* ↓ GLAVNI FIX (prej 24px) */
+    gap: 12px;             /* ključni premium razmak */
   }
 
-  /* NAV LINKS – kompaktnejši */
+  /* NAV LINKS – editorial občutek */
   .nav-link {
     font-size: 14px;
-    letter-spacing: 0.18em; /* ↓ manj razmaka med črkami */
-    padding: 4px 2px;       /* prepreči “raztezanje” */
+    letter-spacing: 0.14em;
+    font-weight: 400;
+    opacity: 0.65;
+    padding: 2px 0;
+  }
+
+  .nav-link:hover {
+    opacity: 0.9;
+  }
+
+  /* Pike med linki (Create · Join · About) */
+  .header-nav > a:not(:last-child)::after {
+    content: " · ";
+    margin-left: 12px;
+    opacity: 0.4;
   }
 }
