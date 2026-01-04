@@ -42,8 +42,8 @@
 
   /* LOGO – bolj podolgovat */
   .logo-image {
-    height: 350px;
-    width: 720px;          /* rahlo več, bolj “horizontal” */
+    height: 150px;
+    width: 620px;          /* rahlo več, bolj “horizontal” */
     object-fit: contain;
   }
 
@@ -60,4 +60,5 @@
     padding: 4px 2px;       /* prepreči “raztezanje” */
   }
 }
+
 
