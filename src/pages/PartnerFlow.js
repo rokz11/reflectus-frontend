@@ -7,7 +7,7 @@ const PROMPTS = [
   {
     id: 1,
     text:
-      "What feels most present in your relationship right now?\n\nWhat has been taking up the most emotional space for you lately?"
+      "What feels most present in your relationship right now?\n\nWhat has been taking up the most emotional energy lately?"
   },
   {
     id: 2,
@@ -17,18 +17,18 @@ const PROMPTS = [
   {
     id: 3,
     text:
-      "Is there something unresolved, heavy, or quietly painful — even if it’s hard to put into words?"
+      "Is there something unresolved, heavy, or painful, between you and your partner, even if its hard to explain?"
   },
   {
     id: 4,
     text:
-      "What would you want your partner to truly understand about you, if you could be heard without interruption?"
+      "What would you want your partner to truly understand about you, and what do you think partner expect from you"
   },
   {
     id: 5,
     optional: true,
     text:
-      "Before finishing, is there anything you would want to add?\n\nThis is optional."
+      "Before finishing, is there anything you would want to add, as final taught maybe?."
   }
 ];
 
