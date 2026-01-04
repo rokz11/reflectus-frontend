@@ -1,4 +1,6 @@
+/* ========================= */
 /* CENTERED HEADER LAYOUT */
+/* ========================= */
 .header {
   display: flex;
   flex-direction: column;
@@ -6,27 +8,33 @@
   padding: 24px 16px 12px;
 }
 
+/* ========================= */
 /* LOGO */
+/* ========================= */
 .logo-image {
-  height: 320px;           /* desktop – NE SPREMINJAMO */
+  height: 320px;            /* desktop – NE SPREMINJAMO */
   width: auto;
   margin-bottom: 1px;
 }
 
-/* NAVIGATION UNDER LOGO */
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
 .header-nav {
   display: flex;
-  gap: 28px;
+  gap: 28px;                /* desktop spacing */
 }
 
+/* ========================= */
 /* NAV LINKS */
+/* ========================= */
 .nav-link {
   font-family: inherit;
   font-size: 13px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 400;
-  opacity: 0.70;
+  opacity: 0.7;
   text-decoration: none;
   color: #1f2937;
 }
@@ -35,47 +43,49 @@
   opacity: 0.9;
 }
 
-/* ========================= */
-/* MOBILE ONLY – PREMIUM */
-/* ========================= */
+/* ================================================= */
+/* MOBILE ONLY – FINAL PREMIUM VERSION */
+/* ================================================= */
 @media (max-width: 640px) {
 
   /* HEADER – več miru */
   .header {
-    padding: 28px 16px 16px;
+    padding: 28px 16px 18px;
   }
 
-  /* LOGO – elegantno podolgovat */
+  /* LOGO – podolgovat, umirjen */
   .logo-image {
     height: 140px;
-    width: 340px;          /* premium, horizontal look */
+    width: 340px;
     object-fit: contain;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
-  /* NAV – tiho, skupaj */
+  /* NAV – ena linija, center */
   .header-nav {
     justify-content: center;
-    gap: 12px;             /* ključni premium razmak */
+    gap: 10px;
+    flex-wrap: nowrap;          /* PREPREČI lomljenje */
   }
 
-  /* NAV LINKS – editorial občutek */
+  /* LINKI – premium editorial */
   .nav-link {
-    font-size: 14px;
-    letter-spacing: 0.14em;
+    font-size: 13px;
+    letter-spacing: 0.12em;     /* KLJUČNI FIX */
     font-weight: 400;
     opacity: 0.65;
-    padding: 2px 0;
+    padding: 0;
+    white-space: nowrap;        /* Create Session v eni vrstici */
   }
 
   .nav-link:hover {
     opacity: 0.9;
   }
 
-  /* Pike med linki (Create · Join · About) */
+  /* Separatorji: Create · Join · About */
   .header-nav > a:not(:last-child)::after {
     content: " · ";
-    margin-left: 12px;
-    opacity: 0.4;
+    margin-left: 8px;
+    opacity: 0.35;
   }
 }
