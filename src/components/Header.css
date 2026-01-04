@@ -8,9 +8,9 @@
 
 /* LOGO */
 .logo-image {
-  height: 320px;           /* ← tu povečaš logo */
+  height: 320px;           /* desktop – NE SPREMINJAMO */
   width: auto;
-  margin-bottom: 1px;    /* razmak do navigacije */
+  margin-bottom: 1px;
 }
 
 /* NAVIGATION UNDER LOGO */
@@ -19,11 +19,11 @@
   gap: 28px;
 }
 
-/* NAV LINKS – SAME FONT FEEL AS LOGO */
+/* NAV LINKS */
 .nav-link {
-  font-family: inherit;      /* isto kot REFLECTUS */
+  font-family: inherit;
   font-size: 13px;
-  letter-spacing: 0.22em;    /* zelo pomembno */
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   font-weight: 400;
   opacity: 0.70;
@@ -35,13 +35,26 @@
   opacity: 0.9;
 }
 
-/* MOBILE */
+/* ========================= */
+/* MOBILE ONLY */
+/* ========================= */
 @media (max-width: 640px) {
+  /* LOGO – bolj podolgovat */
   .logo-image {
-    height: 150px;
+    height: 150px;          /* višina ostane zmerna */
+    width: 300px;           /* ← PODALJŠAMO logo */
+    object-fit: contain;    /* brez popačenja */
   }
 
+  /* NAV – center */
   .header-nav {
-    gap: 20px;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  /* NAV LINKS – malo večje */
+  .nav-link {
+    font-size: 14px;        /* malo večje */
+    letter-spacing: 0.24em;
   }
 }
