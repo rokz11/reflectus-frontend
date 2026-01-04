@@ -42,15 +42,15 @@
 
   /* LOGO – bolj podolgovat */
   .logo-image {
-    height: 150px;
-    width: 620px;          /* rahlo več, bolj “horizontal” */
+    height: 250px;
+    width: 420px;          /* rahlo več, bolj “horizontal” */
     object-fit: contain;
   }
 
   /* NAV – BOLJ SKUPAJ + CENTER */
   .header-nav {
     justify-content: center;
-    gap: 14px;             /* ↓ GLAVNI FIX (prej 24px) */
+    gap: 10px;             /* ↓ GLAVNI FIX (prej 24px) */
   }
 
   /* NAV LINKS – kompaktnejši */
@@ -60,5 +60,6 @@
     padding: 4px 2px;       /* prepreči “raztezanje” */
   }
 }
+
 
 
