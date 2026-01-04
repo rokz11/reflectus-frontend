@@ -22,13 +22,13 @@ const PROMPTS = [
   {
     id: 4,
     text:
-      "What would you want your partner to truly understand about you, and what do you think partner expect from you"
+      "What would you want your partner to truly understand about you, and what do you think your partner expects from you?"
   },
   {
     id: 5,
     optional: true,
     text:
-      "Before finishing, is there anything you would want to add, as final taught maybe?."
+      "Before finishing, is there anything you would want to add as a final thought?"
   }
 ];
 
@@ -38,7 +38,7 @@ export default function PartnerFlow() {
 
   const [step, setStep] = useState(0);
   const [answer, setAnswer] = useState("");
-``
+
   const current = PROMPTS[step];
 
   async function next(skip = false) {
