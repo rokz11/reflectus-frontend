@@ -39,22 +39,24 @@
 /* MOBILE ONLY */
 /* ========================= */
 @media (max-width: 640px) {
+
   /* LOGO – bolj podolgovat */
   .logo-image {
-    height: 150px;          /* višina ostane zmerna */
-    width: 300px;           /* ← PODALJŠAMO logo */
-    object-fit: contain;    /* brez popačenja */
+    height: 150px;
+    width: 320px;          /* rahlo več, bolj “horizontal” */
+    object-fit: contain;
   }
 
-  /* NAV – center */
+  /* NAV – BOLJ SKUPAJ + CENTER */
   .header-nav {
     justify-content: center;
-    gap: 24px;
+    gap: 14px;             /* ↓ GLAVNI FIX (prej 24px) */
   }
 
-  /* NAV LINKS – malo večje */
+  /* NAV LINKS – kompaktnejši */
   .nav-link {
-    font-size: 14px;        /* malo večje */
-    letter-spacing: 0.24em;
+    font-size: 14px;
+    letter-spacing: 0.18em; /* ↓ manj razmaka med črkami */
+    padding: 4px 2px;       /* prepreči “raztezanje” */
   }
 }
