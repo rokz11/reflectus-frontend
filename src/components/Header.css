@@ -8,12 +8,10 @@
 
 /* LOGO */
 .logo-image {
-  height: 320px;           /* desktop – NE SPREMINJAMO */
+  height: 320px;
   width: auto;
   margin-bottom: 1px;
-
-  /* breathing */
-  animation: logoBreath 14.5s ease-in-out infinite;
+  animation: logoBreath 7.5s ease-in-out infinite;
   transform-origin: center;
 }
 
@@ -63,30 +61,30 @@
 /* ========================= */
 @media (max-width: 640px) {
 
-  /* LOGO */
   .logo-image {
     height: 250px;
     width: 420px;
     object-fit: contain;
   }
 
-  /* NAV – tighter + centered */
+  /* NAV – compact */
   .header-nav {
     width: 100%;
     justify-content: space-between;
-    gap: 0;                /* 🔻 manj razmaka */
     padding: 0 12px;
   }
 
-  /* JOIN SESSION – optično na sredini */
-  .header-nav .nav-link:nth-child(2) {
-    margin: 0 auto;
-  }
-
-  /* NAV LINKS – compact */
+  /* 🔑 KLJUČNI FIX */
   .nav-link {
+    display: inline-block;
+    text-align: center;     /* 👈 poravna CREATE / JOIN nad SESSION */
+    line-height: 1.25;
     font-size: 14px;
     letter-spacing: 0.18em;
-    padding: 4px 2px;
+  }
+
+  /* optično centriraj JOIN */
+  .header-nav .nav-link:nth-child(2) {
+    margin: 0 auto;
   }
 }
