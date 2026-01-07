@@ -8,33 +8,27 @@ export default function CreateSession() {
   const [language, setLanguage] = useState("en");
   const [code, setCode] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
-
-  // 🌊 wave phase
-  const [phase, setPhase] = useState(0);
+  const [t, setT] = useState(0);
 
   const navigate = useNavigate();
 
-  // 🌊 smooth wave loop
+  // smooth animation loop
   useEffect(() => {
     const id = setInterval(() => {
-      setPhase(p => p + 0.015);
-    }, 16); // ~60fps
-
+      setT(v => v + 0.02);
+    }, 16);
     return () => clearInterval(id);
   }, []);
 
-  // 🌊 dynamic wave path (REAL wave motion)
+  // REAL wave motion (horizontal + vertical phase)
   const wavePath = `
-    M0 ${160 + Math.sin(phase) * 8}
-    C 180 ${180 + Math.sin(phase + 1) * 14},
-      360 ${200 + Math.sin(phase + 2) * 12},
-      540 ${185 + Math.sin(phase + 3) * 10}
-    C 720 ${170 + Math.sin(phase + 4) * 14},
-      900 ${180 + Math.sin(phase + 5) * 12},
-      1080 ${190 + Math.sin(phase + 6) * 10}
-    C 1260 ${200 + Math.sin(phase + 7) * 12},
-      1380 ${190 + Math.sin(phase + 8) * 10},
-      1440 ${180 + Math.sin(phase + 9) * 8}
+    M0 ${170 + Math.sin(t) * 10}
+    C 240 ${190 + Math.sin(t + 1) * 15},
+      480 ${200 + Math.sin(t + 2) * 12},
+      720 ${180 + Math.sin(t + 3) * 15}
+    C 960 ${160 + Math.sin(t + 4) * 12},
+      1200 ${180 + Math.sin(t + 5) * 15},
+      1440 ${170 + Math.sin(t + 6) * 10}
     L1440 320 L0 320 Z
   `;
 
@@ -45,11 +39,7 @@ export default function CreateSession() {
       const res = await fetch(`${API_BASE}/create_session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          creator_name: name,
-          gender,
-          language
-        })
+        body: JSON.stringify({ creator_name: name, gender, language })
       });
 
       const data = await res.json();
@@ -66,35 +56,27 @@ export default function CreateSession() {
   }
 
   return (
-    <div className="fade-in">
+    <div style={{ position: "relative", zIndex: 1 }} className="fade-in">
 
-      {/* 🌊 BACKGROUND WAVE – PURE JS */}
-      <div
+      {/* 🌊 BACKGROUND WAVE – GUARANTEED VISIBLE */}
+      <svg
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
         style={{
           position: "fixed",
-          inset: 0,
-          zIndex: -1,
-          overflow: "hidden",
-          background: "#FAFAF8"
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "60vh",
+          zIndex: 0,
+          pointerEvents: "none"
         }}
       >
-        <svg
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          style={{
-            position: "absolute",
-            bottom: "-20%",
-            width: "200%",
-            height: "120%",
-            transform: `translateX(${Math.sin(phase * 0.6) * 40}px)`
-          }}
-        >
-          <path
-            d={wavePath}
-            fill="rgba(180,180,180,0.35)"
-          />
-        </svg>
-      </div>
+        <path
+          d={wavePath}
+          fill="rgba(180,180,180,0.35)"
+        />
+      </svg>
 
       {/* HERO */}
       <div className="intro-block" style={{ marginBottom: 36 }}>
