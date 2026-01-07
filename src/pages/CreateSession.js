@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_BASE } from "../api";
 
@@ -8,7 +8,29 @@ export default function CreateSession() {
   const [language, setLanguage] = useState("en");
   const [code, setCode] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
+  const [t, setT] = useState(0);
+
   const navigate = useNavigate();
+
+  // smooth animation loop
+  useEffect(() => {
+    const id = setInterval(() => {
+      setT(v => v + 0.02);
+    }, 16);
+    return () => clearInterval(id);
+  }, []);
+
+  // REAL wave motion (horizontal + vertical phase)
+  const wavePath = `
+    M0 ${170 + Math.sin(t) * 10}
+    C 240 ${190 + Math.sin(t + 1) * 15},
+      480 ${200 + Math.sin(t + 2) * 12},
+      720 ${180 + Math.sin(t + 3) * 15}
+    C 960 ${160 + Math.sin(t + 4) * 12},
+      1200 ${180 + Math.sin(t + 5) * 15},
+      1440 ${170 + Math.sin(t + 6) * 10}
+    L1440 320 L0 320 Z
+  `;
 
   async function create() {
     if (!name) return alert("Please enter your name.");
@@ -17,11 +39,7 @@ export default function CreateSession() {
       const res = await fetch(`${API_BASE}/create_session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          creator_name: name,
-          gender: gender,        // ✅ FIX: ponovno pošljemo gender
-          language: language     // ✅ language gre pravilno v backend
-        })
+        body: JSON.stringify({ creator_name: name, gender, language })
       });
 
       const data = await res.json();
@@ -33,19 +51,38 @@ export default function CreateSession() {
   }
 
   function copyCode() {
-    if (!code) return;
     navigator.clipboard.writeText(code);
     alert("Code copied");
   }
 
   return (
-    <div className="fade-in">
+    <div style={{ position: "relative", zIndex: 1 }} className="fade-in">
+
+      {/* 🌊 BACKGROUND WAVE – GUARANTEED VISIBLE */}
+      <svg
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "60vh",
+          zIndex: 0,
+          pointerEvents: "none"
+        }}
+      >
+        <path
+          d={wavePath}
+          fill="rgba(180,180,180,0.35)"
+        />
+      </svg>
+
       {/* HERO */}
       <div className="intro-block" style={{ marginBottom: 36 }}>
         <p className="session-invitation">
           Take a quiet moment to reflect on your relationship together with your partner.
         </p>
-
         <p className="intro-subtitle">
           A private space to pause, reflect, and be seen.
         </p>
@@ -70,7 +107,6 @@ export default function CreateSession() {
           <option value="male">Male</option>
         </select>
 
-        {/* LANGUAGE SELECTION – PRE CREATE */}
         <select
           value={language}
           onChange={e => setLanguage(e.target.value)}
@@ -97,16 +133,11 @@ export default function CreateSession() {
           <button className="btn btn-primary" onClick={create}>
             Create session
           </button>
-
-          <button
-            className="btn btn-ghost"
-            onClick={() => setShowInstructions(s => !s)}
-          >
+          <button className="btn btn-ghost" onClick={() => setShowInstructions(s => !s)}>
             {showInstructions ? "Hide instructions" : "Instructions"}
           </button>
         </div>
 
-        {/* INLINE INSTRUCTIONS */}
         {showInstructions && (
           <div style={{ marginTop: 20 }}>
             <ul className="intro-steps">
@@ -115,21 +146,15 @@ export default function CreateSession() {
               <li>Reflect separately and privately</li>
               <li>Receive a shared reflection</li>
             </ul>
-
-            <p className="intro-footnote">
-              First use is free.
-            </p>
+            <p className="intro-footnote">First use is free.</p>
           </div>
         )}
 
         {code && (
           <div style={{ marginTop: 22 }}>
             <div className="code-box">{code}</div>
-
             <div style={{ display: "flex", gap: 12, marginTop: 14 }}>
-              <button className="btn btn-ghost" onClick={copyCode}>
-                Copy code
-              </button>
+              <button className="btn btn-ghost" onClick={copyCode}>Copy code</button>
               <button
                 className="btn btn-primary"
                 onClick={() => navigate(`/onboarding/${code}/A`)}
