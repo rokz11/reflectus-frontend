@@ -70,7 +70,7 @@ export default function CreateSession() {
           top: "250px",      // 👈 pod headerjem
           left: 0,
           width: "100%",
-          height: "180px",   // 👈 pas
+          height: "140px",   // 👈 pas
           zIndex: 0,
           pointerEvents: "none"
         }}
@@ -182,6 +182,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
