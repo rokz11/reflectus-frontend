@@ -48,13 +48,14 @@ body {
 }
 
 /* =========================
-   BACKGROUND WAVE (ADDED)
+   BACKGROUND WAVE (FIXED + VISIBLE)
 ========================= */
 
 .breathing-bg {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;              /* ✅ FIXED */
+  pointer-events: none;    /* ✅ FIXED */
   background: #FAFAF8;
   overflow: hidden;
 }
@@ -64,22 +65,39 @@ body {
   bottom: -25%;
   width: 200%;
   height: 120%;
-  animation: breatheWave 10s ease-in-out infinite;
 }
 
-@keyframes breatheWave {
+/* FIRST WAVE */
+.wave-path {
+  animation: breathePath 8s ease-in-out infinite;
+  transform-origin: center;
+  opacity: 0.65;
+}
+
+/* SECOND WAVE */
+.wave-path-secondary {
+  animation: breathePath 11s ease-in-out infinite;
+  transform-origin: center;
+  opacity: 0.35;
+}
+
+@keyframes breathePath {
   0% {
-    transform: translateX(0%) scaleY(0.95);
-    opacity: 0.6;
+    transform: scaleY(0.96);
   }
   50% {
-    transform: translateX(-10%) scaleY(1.05);
-    opacity: 0.9;
+    transform: scaleY(1.06);
   }
   100% {
-    transform: translateX(0%) scaleY(0.95);
-    opacity: 0.6;
+    transform: scaleY(0.96);
   }
+}
+
+/* CONTENT ABOVE BACKGROUND */
+.fade-in,
+.app-main {
+  position: relative;
+  z-index: 1;              /* ✅ FIXED */
 }
 
 /* =========================
