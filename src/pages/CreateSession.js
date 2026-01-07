@@ -67,7 +67,7 @@ export default function CreateSession() {
           bottom: 0,
           left: 0,
           width: "100%",
-          height: "40vh",
+          height: "18vh",
           zIndex: 0,
           pointerEvents: "none"
         }}
@@ -168,6 +168,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
