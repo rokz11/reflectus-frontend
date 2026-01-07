@@ -67,7 +67,7 @@ export default function CreateSession() {
         preserveAspectRatio="none"
         style={{
           position: "fixed",
-          top: "40px",      // 👈 pod headerjem
+          top: "10px",      // 👈 pod headerjem
           left: 0,
           width: "100%",
           height: "180px",   // 👈 pas
@@ -182,5 +182,6 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
