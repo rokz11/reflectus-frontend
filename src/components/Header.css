@@ -11,7 +11,7 @@
   height: 320px;
   width: auto;
   margin-bottom: 1px;
-  animation: logoBreath 7.5s ease-in-out infinite;
+  animation: logoBreath 12.5s ease-in-out infinite;
   transform-origin: center;
 }
 
@@ -86,3 +86,4 @@
     justify-self: center; /* centriraj vse */
   }
 }
+
