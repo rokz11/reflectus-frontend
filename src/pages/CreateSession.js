@@ -19,8 +19,8 @@ export default function CreateSession() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           creator_name: name,
-          gender: gender,        // ✅ FIX: ponovno pošljemo gender
-          language: language     // ✅ language gre pravilno v backend
+          gender: gender,
+          language: language
         })
       });
 
@@ -40,6 +40,21 @@ export default function CreateSession() {
 
   return (
     <div className="fade-in">
+
+      {/* BACKGROUND WAVE – ADDED */}
+      <div className="breathing-bg">
+        <svg
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          className="wave"
+        >
+          <path
+            fill="rgba(180,180,180,0.35)"
+            d="M0,160 C120,190 240,210 360,205 C480,200 600,170 720,160 C840,150 960,160 1080,175 C1200,190 1320,200 1440,190 L1440,320 L0,320 Z"
+          />
+        </svg>
+      </div>
+
       {/* HERO */}
       <div className="intro-block" style={{ marginBottom: 36 }}>
         <p className="session-invitation">
@@ -70,7 +85,6 @@ export default function CreateSession() {
           <option value="male">Male</option>
         </select>
 
-        {/* LANGUAGE SELECTION – PRE CREATE */}
         <select
           value={language}
           onChange={e => setLanguage(e.target.value)}
@@ -106,7 +120,6 @@ export default function CreateSession() {
           </button>
         </div>
 
-        {/* INLINE INSTRUCTIONS */}
         {showInstructions && (
           <div style={{ marginTop: 20 }}>
             <ul className="intro-steps">
