@@ -12,7 +12,7 @@ export default function CreateSession() {
 
   const navigate = useNavigate();
 
-  // 👉 smooth wave time
+  // smooth wave time
   useEffect(() => {
     const id = setInterval(() => {
       setT(v => v + 0.015);
@@ -20,15 +20,27 @@ export default function CreateSession() {
     return () => clearInterval(id);
   }, []);
 
-  // 👉 real horizontal wave
-  const wavePath = `
-    M0 ${160 + Math.sin(t) * 18}
-    C 240 ${180 + Math.sin(t + 1) * 22},
-      480 ${200 + Math.sin(t + 2) * 18},
-      720 ${185 + Math.sin(t + 3) * 14}
-    C 960 ${170 + Math.sin(t + 4) * 16},
-      1200 ${180 + Math.sin(t + 5) * 14},
-      1440 ${170 + Math.sin(t + 6) * 12}
+  // wave 1 – olive (primary)
+  const wavePath1 = `
+    M0 ${155 + Math.sin(t) * 18}
+    C 240 ${175 + Math.sin(t + 1) * 24},
+      480 ${195 + Math.sin(t + 2) * 20},
+      720 ${180 + Math.sin(t + 3) * 16}
+    C 960 ${170 + Math.sin(t + 4) * 18},
+      1200 ${180 + Math.sin(t + 5) * 16},
+      1440 ${170 + Math.sin(t + 6) * 14}
+    L1440 320 L0 320 Z
+  `;
+
+  // wave 2 – bronze (slightly offset & slower feel)
+  const wavePath2 = `
+    M0 ${165 + Math.sin(t + 2) * 14}
+    C 240 ${185 + Math.sin(t + 3) * 18},
+      480 ${205 + Math.sin(t + 4) * 16},
+      720 ${190 + Math.sin(t + 5) * 14}
+    C 960 ${180 + Math.sin(t + 6) * 15},
+      1200 ${190 + Math.sin(t + 7) * 13},
+      1440 ${180 + Math.sin(t + 8) * 12}
     L1440 320 L0 320 Z
   `;
 
@@ -74,20 +86,24 @@ export default function CreateSession() {
         </p>
       </div>
 
-      {/* 🌊 WAVE STRIP – directly under header */}
+      {/* 🌊 WAVE STRIP – blended olive + bronze */}
       <svg
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"
         style={{
           width: "100%",
-          height: 180,
-          marginBottom: -3,   // ✅ ODSTRANI PRAZEN PROSTOR
+          height: 190,
+          marginBottom: 24,
           pointerEvents: "none"
         }}
       >
         <path
-          d={wavePath}
-          fill="rgba(170,170,165,0.18)"
+          d={wavePath1}
+          fill="rgba(111,127,106,0.22)"   // olive (Create session)
+        />
+        <path
+          d={wavePath2}
+          fill="rgba(166,124,82,0.18)"    // bronze
         />
       </svg>
 
@@ -181,6 +197,3 @@ export default function CreateSession() {
     </div>
   );
 }
-
-
-
