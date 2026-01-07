@@ -13,7 +13,7 @@
   margin-bottom: 1px;
 
   /* 🌬️ BREATHING EFFECT */
-  animation: logoBreath 13.5s ease-in-out infinite;
+  animation: logoBreath 12.5s ease-in-out infinite;
   transform-origin: center;
 }
 
@@ -43,8 +43,8 @@
 @keyframes logoBreath {
   0% {
     opacity: 0.55;
-    filter: blur(0.6px);
-    transform: scale(2.01);
+    filter: blur(1.8px);
+    transform: scale(0.995);
   }
   50% {
     opacity: 1;
@@ -83,6 +83,3 @@
     padding: 4px 2px;       /* prepreči “raztezanje” */
   }
 }
-
-
-
