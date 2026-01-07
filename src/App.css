@@ -48,59 +48,6 @@ body {
 }
 
 /* =========================
-   BACKGROUND WAVE (FIXED + VISIBLE)
-========================= */
-
-.breathing-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;              /* ✅ FIXED */
-  pointer-events: none;    /* ✅ FIXED */
-  background: #FAFAF8;
-  overflow: hidden;
-}
-
-.wave {
-  position: absolute;
-  bottom: -25%;
-  width: 200%;
-  height: 120%;
-}
-
-/* FIRST WAVE */
-.wave-path {
-  animation: breathePath 8s ease-in-out infinite;
-  transform-origin: center;
-  opacity: 0.65;
-}
-
-/* SECOND WAVE */
-.wave-path-secondary {
-  animation: breathePath 11s ease-in-out infinite;
-  transform-origin: center;
-  opacity: 0.35;
-}
-
-@keyframes breathePath {
-  0% {
-    transform: scaleY(0.96);
-  }
-  50% {
-    transform: scaleY(1.06);
-  }
-  100% {
-    transform: scaleY(0.96);
-  }
-}
-
-/* CONTENT ABOVE BACKGROUND */
-.fade-in,
-.app-main {
-  position: relative;
-  z-index: 1;              /* ✅ FIXED */
-}
-
-/* =========================
    TYPOGRAPHY – BASE
 ========================= */
 
@@ -272,6 +219,7 @@ p {
     text-align: center;
   }
 
+  /* buttons stack vertically on mobile */
   .card form,
   .card {
     padding: 22px;
