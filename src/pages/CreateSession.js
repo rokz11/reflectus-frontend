@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_BASE } from "../api";
 
@@ -8,7 +8,20 @@ export default function CreateSession() {
   const [language, setLanguage] = useState("en");
   const [code, setCode] = useState(null);
   const [showInstructions, setShowInstructions] = useState(false);
+
+  // ✅ ADDED – wave animation state
+  const [wavePhase, setWavePhase] = useState(0);
+
   const navigate = useNavigate();
+
+  // ✅ ADDED – JS-driven breathing animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWavePhase(p => (p + 1) % 360);
+    }, 40); // speed (lower = faster)
+
+    return () => clearInterval(interval);
+  }, []);
 
   async function create() {
     if (!name) return alert("Please enter your name.");
@@ -41,12 +54,18 @@ export default function CreateSession() {
   return (
     <div className="fade-in">
 
-      {/* BACKGROUND WAVE – ADDED */}
+      {/* BACKGROUND WAVE – JS ANIMATED */}
       <div className="breathing-bg">
         <svg
           viewBox="0 0 1440 320"
           preserveAspectRatio="none"
           className="wave"
+          style={{
+            transform: `
+              translateY(${Math.sin(wavePhase * Math.PI / 180) * 10}px)
+              scaleY(${1 + Math.sin(wavePhase * Math.PI / 180) * 0.03})
+            `
+          }}
         >
           <path
             fill="rgba(180,180,180,0.35)"
