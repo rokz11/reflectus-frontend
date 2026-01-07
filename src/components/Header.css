@@ -31,6 +31,7 @@
   opacity: 0.70;
   text-decoration: none;
   color: #1f2937;
+  text-align: center;
 }
 
 .nav-link:hover {
@@ -61,30 +62,27 @@
 /* ========================= */
 @media (max-width: 640px) {
 
+  /* LOGO */
   .logo-image {
     height: 250px;
     width: 420px;
     object-fit: contain;
   }
 
-  /* NAV – compact */
+  /* 🔑 GRID = popolna poravnava */
   .header-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 enake kolone */
     width: 100%;
-    justify-content: space-between;
-    padding: 0 12px;
+    max-width: 360px;
+    gap: 0;
+    margin-top: 6px;
   }
 
-  /* 🔑 KLJUČNI FIX */
   .nav-link {
-    display: inline-block;
-    text-align: center;     /* 👈 poravna CREATE / JOIN nad SESSION */
-    line-height: 1.25;
     font-size: 14px;
     letter-spacing: 0.18em;
-  }
-
-  /* optično centriraj JOIN */
-  .header-nav .nav-link:nth-child(2) {
-    margin: 0 auto;
+    line-height: 1.25;
+    justify-self: center; /* centriraj vse */
   }
 }
