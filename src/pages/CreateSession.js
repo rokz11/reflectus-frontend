@@ -76,7 +76,7 @@ export default function CreateSession() {
     <div className="fade-in">
 
       {/* HERO */}
-      <div className="intro-block" style={{ marginBottom: 14 }}>
+      <div className="intro-block" style={{ marginBottom: 8 }}>
         <p className="session-invitation">
           Take a quiet moment to reflect on your relationship together with your partner.
         </p>
@@ -197,4 +197,5 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
