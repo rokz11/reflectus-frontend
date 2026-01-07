@@ -11,6 +11,10 @@
   height: 320px;           /* desktop – NE SPREMINJAMO */
   width: auto;
   margin-bottom: 1px;
+
+  /* 🌬️ BREATHING EFFECT */
+  animation: logoBreath 7.5s ease-in-out infinite;
+  transform-origin: center;
 }
 
 /* NAVIGATION UNDER LOGO */
@@ -33,6 +37,25 @@
 
 .nav-link:hover {
   opacity: 0.9;
+}
+
+/* 🌬️ LOGO BREATHING ANIMATION */
+@keyframes logoBreath {
+  0% {
+    opacity: 0.55;
+    filter: blur(1.8px);
+    transform: scale(0.995);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.55;
+    filter: blur(1.8px);
+    transform: scale(0.995);
+  }
 }
 
 /* ========================= */
@@ -60,6 +83,3 @@
     padding: 4px 2px;       /* prepreči “raztezanje” */
   }
 }
-
-
-
