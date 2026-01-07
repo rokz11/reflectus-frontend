@@ -74,7 +74,7 @@ export default function CreateSession() {
       >
         <path
           d={wavePath}
-          fill="rgba(180,180,180,0.60)"
+          fill="rgba(180,180,180,0.35)"
         />
       </svg>
 
@@ -168,6 +168,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
