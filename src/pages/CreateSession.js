@@ -93,7 +93,7 @@ export default function CreateSession() {
         style={{
           width: "100%",
           height: 190,
-          marginBottom: 0.08,
+          marginBottom: 0.04,
           pointerEvents: "none"
         }}
       >
@@ -197,6 +197,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
