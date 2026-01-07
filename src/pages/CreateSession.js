@@ -14,15 +14,15 @@ export default function CreateSession() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setT(v => v + 0.055);
+      setT(v => v + 0.040);
     }, 16);
     return () => clearInterval(id);
   }, []);
 
   const wavePath = `
-    M0 ${170 + Math.sin(t) * 4}
-    C 240 ${190 + Math.sin(t + 1) * 6},
-      480 ${200 + Math.sin(t + 2) * 5},
+    M0 ${170 + Math.sin(t) * 6}
+    C 240 ${190 + Math.sin(t + 1) * 9},
+      480 ${200 + Math.sin(t + 2) * 8},
       720 ${180 + Math.sin(t + 3) * 6}
     C 960 ${160 + Math.sin(t + 4) * 5},
       1200 ${180 + Math.sin(t + 5) * 6},
@@ -182,6 +182,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
