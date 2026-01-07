@@ -20,9 +20,9 @@ export default function CreateSession() {
   }, []);
 
   const wavePath = `
-    M0 ${170 + Math.sin(t) * 6}
-    C 240 ${190 + Math.sin(t + 1) * 13},
-      480 ${200 + Math.sin(t + 2) * 5},
+    M0 ${170 + Math.sin(t) * 16}
+    C 240 ${190 + Math.sin(t + 1) * 23},
+      480 ${200 + Math.sin(t + 2) * 18},
       720 ${180 + Math.sin(t + 3) * 6}
     C 960 ${160 + Math.sin(t + 4) * 5},
       1200 ${180 + Math.sin(t + 5) * 6},
@@ -182,6 +182,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
