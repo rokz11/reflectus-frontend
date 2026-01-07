@@ -81,7 +81,7 @@ export default function CreateSession() {
         style={{
           width: "100%",
           height: 180,
-          marginBottom: 28,
+          marginBottom: -24,   // ✅ ODSTRANI PRAZEN PROSTOR
           pointerEvents: "none"
         }}
       >
