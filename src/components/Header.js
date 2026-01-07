@@ -10,7 +10,7 @@ export default function Header() {
           <img
             src={logo}
             alt="ReflectUS"
-            className="logo-image"
+            className="logo-image breathing-logo"
           />
         </Link>
       </div>
