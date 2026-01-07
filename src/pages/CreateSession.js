@@ -14,7 +14,7 @@ export default function CreateSession() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setT(v => v + 0.012);
+      setT(v => v + 0.055);
     }, 16);
     return () => clearInterval(id);
   }, []);
@@ -182,6 +182,7 @@ export default function CreateSession() {
     </div>
   );
 }
+
 
 
 
