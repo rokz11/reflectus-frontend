@@ -48,6 +48,41 @@ body {
 }
 
 /* =========================
+   BACKGROUND WAVE (ADDED)
+========================= */
+
+.breathing-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #FAFAF8;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: -25%;
+  width: 200%;
+  height: 120%;
+  animation: breatheWave 10s ease-in-out infinite;
+}
+
+@keyframes breatheWave {
+  0% {
+    transform: translateX(0%) scaleY(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(-10%) scaleY(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(0%) scaleY(0.95);
+    opacity: 0.6;
+  }
+}
+
+/* =========================
    TYPOGRAPHY – BASE
 ========================= */
 
@@ -219,7 +254,6 @@ p {
     text-align: center;
   }
 
-  /* buttons stack vertically on mobile */
   .card form,
   .card {
     padding: 22px;
