@@ -12,8 +12,8 @@
   width: auto;
   margin-bottom: 1px;
 
-  /* 🌬️ BREATHING EFFECT */
-  animation: logoBreath 12.5s ease-in-out infinite;
+  /* breathing */
+  animation: logoBreath 14.5s ease-in-out infinite;
   transform-origin: center;
 }
 
@@ -39,7 +39,7 @@
   opacity: 0.9;
 }
 
-/* 🌬️ LOGO BREATHING ANIMATION */
+/* LOGO BREATHING */
 @keyframes logoBreath {
   0% {
     opacity: 0.55;
@@ -63,23 +63,30 @@
 /* ========================= */
 @media (max-width: 640px) {
 
-  /* LOGO – bolj podolgovat */
+  /* LOGO */
   .logo-image {
     height: 250px;
-    width: 420px;          /* rahlo več, bolj “horizontal” */
+    width: 420px;
     object-fit: contain;
   }
 
-  /* NAV – BOLJ SKUPAJ + CENTER */
+  /* NAV – tighter + centered */
   .header-nav {
-    justify-content: center;
-    gap: 10px;             /* ↓ GLAVNI FIX (prej 24px) */
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;                /* 🔻 manj razmaka */
+    padding: 0 12px;
   }
 
-  /* NAV LINKS – kompaktnejši */
+  /* JOIN SESSION – optično na sredini */
+  .header-nav .nav-link:nth-child(2) {
+    margin: 0 auto;
+  }
+
+  /* NAV LINKS – compact */
   .nav-link {
     font-size: 14px;
-    letter-spacing: 0.18em; /* ↓ manj razmaka med črkami */
-    padding: 4px 2px;       /* prepreči “raztezanje” */
+    letter-spacing: 0.18em;
+    padding: 4px 2px;
   }
 }
