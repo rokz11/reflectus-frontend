@@ -12,21 +12,35 @@ export default function CreateSession() {
 
   const navigate = useNavigate();
 
+  // smoother + faster wave motion
   useEffect(() => {
     const id = setInterval(() => {
-      setT(v => v + 0.020);
+      setT(v => v + 0.035); // 🔥 SPEED (več = hitreje)
     }, 16);
     return () => clearInterval(id);
   }, []);
 
-  const wavePath = `
-    M0 ${170 + Math.sin(t) * 28}
-    C 240 ${190 + Math.sin(t + 1) * 42},
-      480 ${200 + Math.sin(t + 2) * 35},
-      720 ${180 + Math.sin(t + 3) * 6}
-    C 960 ${160 + Math.sin(t + 4) * 5},
-      1200 ${180 + Math.sin(t + 5) * 6},
-      1440 ${170 + Math.sin(t + 6) * 4}
+  // main wave
+  const wave1 = `
+    M0 ${170 + Math.sin(t) * 32}
+    C 240 ${190 + Math.sin(t + 1) * 48},
+      480 ${200 + Math.sin(t + 2) * 38},
+      720 ${180 + Math.sin(t + 3) * 18}
+    C 960 ${160 + Math.sin(t + 4) * 22},
+      1200 ${185 + Math.sin(t + 5) * 20},
+      1440 ${170 + Math.sin(t + 6) * 16}
+    L1440 320 L0 320 Z
+  `;
+
+  // softer background wave
+  const wave2 = `
+    M0 ${160 + Math.sin(t + 2) * 20}
+    C 240 ${175 + Math.sin(t + 3) * 26},
+      480 ${185 + Math.sin(t + 4) * 22},
+      720 ${170 + Math.sin(t + 5) * 14}
+    C 960 ${155 + Math.sin(t + 6) * 16},
+      1200 ${170 + Math.sin(t + 7) * 14},
+      1440 ${160 + Math.sin(t + 8) * 12}
     L1440 320 L0 320 Z
   `;
 
@@ -61,28 +75,32 @@ export default function CreateSession() {
   return (
     <div style={{ position: "relative", zIndex: 1 }} className="fade-in">
 
-      {/* BACKGROUND WAVE – UNDER HEADER, ABOVE BUTTONS */}
+      {/* ORGANIC WAVES – DIRECTLY UNDER HEADER */}
       <svg
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"
         style={{
-          position: "fixed",
-          top: "250px",      // 👈 pod headerjem
+          position: "absolute",
+          top: 140,          // 👈 TOČNO POD HEADERJEM
           left: 0,
           width: "100%",
-          height: "160px",   // 👈 pas
+          height: 220,
           zIndex: 0,
           pointerEvents: "none"
         }}
       >
         <path
-          d={wavePath}
-          fill="rgba(170,170,165,0.22)"
+          d={wave2}
+          fill="rgba(170,170,165,0.14)"
+        />
+        <path
+          d={wave1}
+          fill="rgba(160,160,155,0.22)"
         />
       </svg>
 
       {/* HERO */}
-      <div className="intro-block" style={{ marginBottom: 36 }}>
+      <div className="intro-block" style={{ marginBottom: 36, position: "relative", zIndex: 2 }}>
         <p className="session-invitation">
           Take a quiet moment to reflect on your relationship together with your partner.
         </p>
@@ -93,7 +111,7 @@ export default function CreateSession() {
       </div>
 
       {/* FORM */}
-      <div className="card form">
+      <div className="card form" style={{ position: "relative", zIndex: 2 }}>
         <input
           className="input"
           placeholder="Your display name"
@@ -182,22 +200,3 @@ export default function CreateSession() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
