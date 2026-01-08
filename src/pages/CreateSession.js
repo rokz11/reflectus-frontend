@@ -86,6 +86,22 @@ export default function CreateSession() {
         </p>
       </div>
 
+      {/* ADDED – subtle bridge text */}
+      <p
+        style={{
+          maxWidth: 520,
+          margin: "0 auto 10px",
+          fontSize: 13,
+          lineHeight: 1.6,
+          color: "#6B6B6B",
+          fontStyle: "italic",
+          textAlign: "center"
+        }}
+      >
+        Because seeing the same relationship from two separate inner positions
+        reveals balance — or the lack of it.
+      </p>
+
       {/* 🌊 WAVE STRIP – blended olive + bronze */}
       <svg
         viewBox="0 0 1440 320"
@@ -99,11 +115,11 @@ export default function CreateSession() {
       >
         <path
           d={wavePath1}
-          fill="rgba(111,127,106,0.22)"   // olive (Create session)
+          fill="rgba(111,127,106,0.22)"
         />
         <path
           d={wavePath2}
-          fill="rgba(166,124,82,0.18)"    // bronze
+          fill="rgba(166,124,82,0.18)"
         />
       </svg>
 
@@ -197,12 +213,3 @@ export default function CreateSession() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
