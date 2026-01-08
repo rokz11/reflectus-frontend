@@ -45,12 +45,12 @@
     filter: blur(3px);
     transform: scale(0.995);
   }
-  25% {
+  50% {
     opacity: 1;
     filter: blur(0px);
     transform: scale(1);
   }
-  100% {
+  100%,200%{
     opacity: 0.55;
     filter: blur(3px);
     transform: scale(0.995);
@@ -86,6 +86,7 @@
     justify-self: center; /* centriraj vse */
   }
 }
+
 
 
 
