@@ -12,23 +12,35 @@ export default function About() {
         </p>
 
         <p>
-          It exists for people who want to pause and look more clearly at their
+          It is for people who want to pause and look more clearly at their
           relationship — without pressure, diagnosis, or performance.
         </p>
 
         <p>
-          ReflectUS does not sell therapy. It does not replace human
-          conversation. And it does not promise quick fixes.
+          ReflectUS is not therapy. It does not replace conversation, and it does
+          not promise quick fixes.
         </p>
 
         <p>
-          It creates a structured space where reflection can happen without
-          interruption, defensiveness, or the need to resolve anything
-          immediately.
+          It creates a calm, structured space where reflection can happen without
+          defensiveness or the need to resolve anything immediately.
         </p>
 
         <p>
-          Most relationship tools instruct, diagnose, or try to fix.
+          The first module offers a clear shared snapshot of the relationship as
+          it is right now.
+        </p>
+
+        <p>
+          A second, optional module focuses more deeply on the individual.
+          Based on both private and shared reflections, it looks for possible
+          paths to improve the partnership.
+          It adds rhythm, boundaries, and continuity — because meaningful
+          reflection needs structure to remain productive.
+        </p>
+
+        <p>
+          Most relationship tools instruct, analyze, or try to fix.
         </p>
 
         <p>
@@ -36,70 +48,36 @@ export default function About() {
         </p>
 
         <p>
-          Both partners reflect privately, without seeing each other’s words.
-          Individual reflections remain fully private. What is shared is only a
-          neutral reflection of emotional patterns, balance, and overall signal
-          — never quotes, never blame.
+          Both partners reflect privately. No one sees the other’s words.
+          What is shared is only a neutral signal — emotional patterns,
+          balance, and overall tone.
+          No quotes. No blame.
         </p>
 
         <p>
-          The system is intentionally non-invasive. It does not take sides. It
-          does not tell you what to do.
+          At the core of ReflectUS is advanced, purpose-built artificial
+          intelligence, designed specifically for reflective processes between
+          people.
         </p>
 
         <p>
-          ReflectUS is built as a modular space.
+          It does not reassure or soften. It does not take sides.
+          It reflects only what is present and supported by what was shared.
         </p>
 
         <p>
-          The first module offers a shared reflection between partners — a clear
-          snapshot of the relationship as it appears right now.
-        </p>
-
-        <p>
-          A second module, available as a paid extension, continues the process
-          on an individual level. It introduces rhythm, boundaries, and agreed
-          timing — because meaningful reflection needs structure to remain
-          productive.
-        </p>
-
-        <p>
-          This module supports depth and continuity over time, without turning
-          the experience into therapy or self-help performance.
-        </p>
-
-        <p>
-          ReflectUS uses advanced, purpose-built artificial intelligence,
-          designed specifically for reflective processes between humans.
-        </p>
-
-        <p>
-          It does not reassure or soften. It reflects only what is present and
-          supported by what was shared.
-        </p>
-
-        <p>
-          This often activates deeper thinking — not because the system
-          “understands” you, but because it does not protect you from clarity.
-        </p>
-
-        <p>
-          Over time, changes in tone, engagement, and balance can be observed —
+          Over time, changes in tone, engagement, and balance become visible —
           without judgment or narrative.
         </p>
 
         <p>
           ReflectUS works best when its structure is respected.
+          Depth depends on sincerity, not eloquence.
         </p>
 
         <p>
-          Reflection happens within agreed time windows. The process follows
-          clear rules. Depth depends on sincerity, not eloquence.
-        </p>
-
-        <p>
-          If engagement is shallow, that will be reflected. If one side
-          disengages, that imbalance will be visible.
+          If engagement is shallow, that will be reflected.
+          If one side disengages, that imbalance will be visible.
         </p>
 
         <p>
@@ -107,7 +85,8 @@ export default function About() {
         </p>
 
         <p style={{ marginTop: 24 }}>
-          ReflectUS is not designed to impress. It is designed to be honest.
+          ReflectUS is not designed to impress.
+          It is designed to be clear.
         </p>
       </div>
     </div>
