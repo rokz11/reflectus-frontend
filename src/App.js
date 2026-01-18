@@ -1,6 +1,7 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "./components/Header";
 
@@ -19,6 +20,7 @@ export default function App() {
     <Router>
       <div className="app-root">
         <Header />
+        <Analytics />
 
         <main className="app-main">
           <Routes>
